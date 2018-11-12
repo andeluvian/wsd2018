@@ -42,28 +42,28 @@ input[type=submit]:hover {
 <h3>Contact Form</h3>
 
 <div class="container">
-<!--   <form action="http://postb.in/DdS8IS5C" method="post">-->
+  <!-- <form action="http://postb.in/DdS8IS5C" method="post">-->
       <form action="http://127.0.0.1/wsd/html_form_check" method="post">
 
     <label for="email">Email:</label>
-    <input type="text" id="email">
+    <input type="text" id="email" name="email">
 
     <label for="passwd">Password:</label>
-    <input type="text" id="passwd">
+    <input type="text" id="passwd" name="passwd">
 
     <label for="passwd2">Repeat password:</label>
-    <input type="text" id="passwd2">
+    <input type="text" id="passwd2" name="passwd2">
 
     <label for="lang">Language:</label>
-    <select id="lang">
+    <select id="lang" name="lang">
       <option value="sv">Swedish</option>
       <option value="fi">Finland</option>
       <option value="da">Danish</option>
       <option value="no">Norwegian</option>
       <option value="is">Icelandic</option>
     </select>
-  <label for="terms"></label>
-    <input type="checkbox" id="terms" value="on" > I accept terms and conditions<br><br>
+  <label for="terms">I accept terms and conditions</label>
+    <input type="checkbox" name="terms" id="terms"> <br><br>
 
     <input type="submit" value="Submit">
   </form>
