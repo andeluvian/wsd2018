@@ -1,0 +1,67 @@
+#header {
+
+
+}
+#navigation{
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#navigation li{
+   display: inline;
+}
+
+#aside{
+  float: right;
+  width: 40%;
+  margin-left: auto;
+
+}
+
+
+#aside li{
+
+
+
+}
+
+#aside h3{
+
+
+}
+
+#main{
+
+
+}
+
+#content{
+  float: left;
+  width: 50%;
+}
+#footer {
+
+  position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+
+      text-align: center;
+
+
+}
+#footer p{
+
+
+
+}
+
+body{
+
+
+}
+
+div{
+
+
+}
