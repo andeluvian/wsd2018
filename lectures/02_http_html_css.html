@@ -448,9 +448,10 @@ example&lt;/p&gt;
           <p>There are three types of lists <em>ordered</em> <code>&lt;ol&gt;</code>, <em>unordered</em> <code>&lt;ul&gt;</code>, and <em>definition</em> <code>&lt;dl&gt;</code>. The first one is list with numbering and the second one is without numbering. Items in the first two are marked with <code>&lt;li&gt;</code>.</p>
           <p>Ordered and unordered lists are for "normal" lists. The definition list is used to mark a list of definions.</p>
         </section>
+
         <section>
           <h2>Elements - List examples</h2>
-          <pre><code>&lt;ol&gt;
+          <pre><code contenteditable="true" id="list_example">&lt;ol&gt;
   &lt;li&gt;First item&lt;/li&gt;
   &lt;li&gt;Second item&lt;/li&gt;
 &lt;/ol&gt;
@@ -468,11 +469,14 @@ example&lt;/p&gt;
   defining the presentation of HTML documents&lt;/dd&gt;
 &lt;/dl&gt;
 </code></pre>
+
+          <button id="list_example-btn">Try it</button>
+          <div id="list_example-target"></div>
         </section>
 
         <section>
           <h2>Elements - Forms</h2>
-          <p>Forms are used to send data to the server. In this exaple data from the from is POSTed to the server. This communication happens via <em>HTTP</em> – HyperText Transfer Protocol. It will be discussed later on.</p>
+          <p>Forms are used to send data to the server. In this example data from the from is POSTed to the server. This communication happens via <em>HTTP</em> – HyperText Transfer Protocol. It will be discussed later on.</p>
           <pre><code id="form_example">&lt;form action="/scripts/add_contact" method="POST"&gt;
   &lt;p&gt;First name:
     &lt;input type="text" name="first-name"&gt;
@@ -539,7 +543,7 @@ example&lt;/p&gt;
 
         <section>
           <h2>IFrames</h2>
-          <p>IFrames embed another <code>HTML</code> document (specified byt the <code>src</code> attribute) to the current document. If the embedded HTML document comes from another <code>domain</code> there are some restrictions what it can do.</p>
+          <p>IFrames embed another <code>HTML</code> document (specified by the <code>src</code> attribute) to the current document. If the embedded HTML document comes from another <code>domain</code> there are some restrictions what it can do.</p>
           <p>An example:</p>
           <pre><code>
 &lt;iframe src="http://plus.cs.hut.fi"&gt;
@@ -556,7 +560,7 @@ example&lt;/p&gt;
 
         <section>
           <h2>New in HTML5</h2>
-          <p>There are a fair number of new elements HTML5. Some of them are used to define semantics of the document further and some of them provide new functionality.</p>
+          <p>There are a fair number of new elements in HTML5. Some of them are used to define semantics of the document further and some of them provide new functionality.</p>
           <p>A good overview of important semantic elements can be found from <a href="http://diveintohtml5.info/semantics.html#new-elements">Dive Into HTML5</a>.</p>
           <p>There are plenty of new elements for <em>embedding</em> content, such as <code>&lt;video&gt;</code> (for videos) and <code>&lt;canvas&gt;</code> (for interactive bitmap graphics).</p>
         </section>
@@ -1086,6 +1090,9 @@ p.side_note {
     });
     $("#table_example_btn").click(function() {
       htmlExample("#table_example", "#table_example_target");
+    });
+    $("#list_example-btn").click(function() {
+      htmlExample("#list_example", "#list_example-target");
     });
     $("#form_example_btn").click(function() {
       htmlExample("#form_example", "#form_example_target");
