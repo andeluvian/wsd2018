@@ -3,7 +3,7 @@ import json
 class Song:
 	def __init__(self, some_song):
 		
-		file_directory = "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song 
+		file_directory = "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song + ".json"
 		with open(file_directory) as json_data:
 			data = json.load(json_data)
 		
@@ -57,11 +57,3 @@ class Song:
 		for tags in self.get_tags():
 			mySet.add(tags)
 		return mySet
-	
-	
-#def main():
-#	some_song = Song('TRAWHKS128F9330619')
-#	print(some_song.get_tags())
-
-	
-#main()
