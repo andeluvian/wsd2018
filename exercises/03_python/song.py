@@ -3,7 +3,7 @@ import json
 class Song:
 	def __init__(self, some_song):
 		
-		file_directory = "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song + ".json"
+		file_directory = "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song 
 		with open(file_directory) as json_data:
 			data = json.load(json_data)
 		
@@ -37,7 +37,7 @@ class Song:
 		else:
 			for tracks in self.similars:
 				if limit <= tracks[1]:
-					track_list.append(track[0])
+					track_list.append(tracks[0])
 		return track_list
 		
 	def shared_tags(self, some_song):
