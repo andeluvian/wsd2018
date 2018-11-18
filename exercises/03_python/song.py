@@ -1,5 +1,5 @@
 import json
-import.os
+import os
 
 
 class Song:
@@ -61,9 +61,9 @@ class Song:
 		
 		
 		
-def main():
-	some_song = Song('TRAWHKS128F9330619')
-	print(some_song.get_tags())
+#def main():
+#	some_song = Song('TRAWHKS128F9330619')
+#	print(some_song.get_tags())
 
 	
-main()
+#main()
