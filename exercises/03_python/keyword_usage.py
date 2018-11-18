@@ -1,8 +1,9 @@
 
 def keyword_usage(sentence, list_of_words):
   my_tuple = ()
-  for word in sentence.split():
-    if word in list_of_words:
+  splitted_sentence = sentence.split()
+  for word in list_of_words:
+    if word in splitted_sentence: 
       my_tuple = my_tuple + (True,)
     else:
       my_tuple = my_tuple + (False,)
@@ -13,4 +14,3 @@ def main():
 	sentence = input("")
 	list_of_words = ['Python','python','scala']
 	print(keyword_usage(sentence, list_of_words))
-
