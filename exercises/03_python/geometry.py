@@ -2,11 +2,11 @@ import math
 
 class Point:
 	def __init__(self, p1,p2):
-		self.p1 = p1
-		self.p2 = p2
+		self.x = p1
+		self.y = p2
 		
-	def distance_form(self,point):
-		dist = math.sqrt((point.p1 - self.p1)**2 + (point.p2 - self.p2)**2)
+	def distance_from(self,point):
+		dist = math.sqrt((point.x - self.x)**2 + (point.y - self.y)**2)
 		return dist
 		
 class Circle:
@@ -15,7 +15,7 @@ class Circle:
 		self.radius = radius
 	
 	def is_inside(self,point):
-		if ((point.p1 - self.center.p1) * (point.p1 - self.center.p1) + (point.p2 - self.center.p2) * (point.p2 - self.center.p2) <= self.radius * self.radius):
+		if ((point.x - self.center.x) * (point.x - self.center.x) + (point.y - self.center.y) * (point.y - self.center.y) <= self.radius * self.radius):
 			return True
 		else:
 			return False
