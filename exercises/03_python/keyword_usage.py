@@ -13,5 +13,3 @@ def main():
 	sentence = input("")
 	list_of_words = ['Python',  'python', 'scala']
 	print(keyword_usage(sentence, list_of_words))
-	
-main()
