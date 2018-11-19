@@ -1,20 +1,24 @@
 import json
 import os
-
+from pathlib import Path
 
 class Song:
 	def __init__(self, some_song):
-		my_file = os.path.join('lastfm_subset', filename[2], filename[3],  filename[4], os.path.splitext(filename)[0] + '.json')
-		with open(my_file) as json_data:
-			data = json.load(json_data)
-		
-		
-			self.artist = data["artist"]
-			self.title = data["title"]
-			self.timestamp = data["timestamp"]
-			self.similars = data["similars"]
-			self.tags = data["tags"]
-			self.track_id = data["track_id"]
+		#my_file = os.path.join('lastfm_subset', some_song[2], some_song[3],  some_song[4], os.path.splitext(some_song)[0] + '.json')
+		file_directory = Path( "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song + ".json")
+		if file_directory.is_file():
+			with open(file_directory) as json_data:
+				data = json.load(json_data)
+			
+			
+				self.artist = data["artist"]
+				self.title = data["title"]
+				self.timestamp = data["timestamp"]
+				self.similars = data["similars"]
+				self.tags = data["tags"]
+				self.track_id = data["track_id"]
+		else:
+			return None
 		
 	def get_tags(self, limit=None):
 		tag_list = []
@@ -57,7 +61,9 @@ class Song:
 			mySet.add(tags)
 		for tags in self.get_tags():
 			mySet.add(tags)
-		return mySet
+		myList = list(mySet)
+		
+		return myList
 		
 		
 		
