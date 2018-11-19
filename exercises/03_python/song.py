@@ -4,7 +4,7 @@ import os
 
 class Song:
 	def __init__(self, some_song):
-		my_file = os.path.join('lastfm_subset', filename[2], filename[3],  filename[4], os.path.splitext(filename)[0] + '.json'))
+		my_file = os.path.join('lastfm_subset', filename[2], filename[3],  filename[4], os.path.splitext(filename)[0] + '.json')
 		with open(my_file) as json_data:
 			data = json.load(json_data)
 		
