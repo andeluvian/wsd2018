@@ -5,7 +5,17 @@ return "hello"
 
 
 function frequencies(text,wordlist){
-return "hello"
+  var results = {};
+  var a = text.split(" ");
+  var n = 0;
+for ( i < wordlist.length){
+
+
+results.push(a[i],n);
+
+}
+return results
+
 }
 
 

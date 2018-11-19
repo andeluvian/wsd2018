@@ -1,4 +1,4 @@
-function addPersonMethods(person){
+var addPersonMethods = function (person){
 
 var person = {};
 person.name = name;
@@ -6,38 +6,39 @@ person.age = age;
 
 console.log('Hi! I\'m ' + this.name + '.');
 
-};
 
-function greet(sentence)
+
+this.greet = function(sentence)
 {
 return sentence + ", my name is " + this.name
 }
 
-function compareage(anotherPersonObject){
+this.compareage = function(person){
 
-if (this.age < anotherPersonObject.age)
+if (this.age < person.age)
 {
-return "My name is " + this.name + " and I'm younger than " +anotherPersonObject.name
+return "My name is " + this.name + " and I'm younger than " +person.name
 }
-if(this.age == anotherPersonObject.age)
+if(this.age == person.age)
 {
-return "My name is " +this.name + " and I'm as young as " +anotherPersonObject.name
+return "My name is " +this.name + " and I'm as young as " +person.name
 }
 else
 {
-return "My name is " +this.name + " and I'm older than " +anotherPersonObject.name
+return "My name is " +this.name + " and I'm older than " +person.name
 }
 }
 
-function namesake(anotherPersonObject){
+this.namesake = function (person){
 
-if(this.name == anotherPersonObject.name){
+if(this.name == person.name){
 
-  return "We have the same name, " + anotherPersonObject.name + " and I!"
+  return "We have the same name, " + person.name + " and I!"
 }
 else
 {
-  return "We have different names, " + anotherPersonObject.name + " and I."
+  return "We have different names, " + person.name + " and I."
 }
 
 }
+};
