@@ -1,6 +1,4 @@
 function addPersonMethods(person){
-
-
 this.name = person.name;
 this.age = person.age;
 
@@ -8,7 +6,7 @@ person.greet = function (sentence){
 return sentence + ", my name is " + person.name;
 };
 
-person.compareage = function(person){
+person.compareAge = function(person){
   if (this.age < person.age)
   {
   return "My name is " + this.name + " and I'm younger than " +person.name
