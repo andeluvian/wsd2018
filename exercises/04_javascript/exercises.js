@@ -9,10 +9,11 @@ function frequencies(text,wordlist){
   var a = text.split(" ");
   var n = 0;
 for ( i < wordlist.length){
-
+if(wordlist[i].count){
 
 results.push(a[i],n);
-
+}
+i++
 }
 return results
 
