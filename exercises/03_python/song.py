@@ -24,12 +24,12 @@ class Song:
 			self.tags = data["tags"]
 			self.track_id = data["track_id"]
 		except IOError:
-			self.artist = ''
-			self.title = ''
-			self.timestamp = ''
+			self.artist = "file"
+			self.title = "not found"
+			self.timestamp = "-1"
 			self.similars = []
 			self.tags = []
-			self.track_id = ''
+			self.track_id = some_song
 			
 		#else:
 		#	return None
