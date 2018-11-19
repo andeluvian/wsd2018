@@ -13,9 +13,9 @@ person.compareAge = function(person){
   }
   if(this.age == person.age)
   {
-  console.log(["My name is " +this.name + " and I'm as young as " +person.name].join(""));;
+  console.log(["My name is " +this.name + " I'm equally young as " +person.name].join(""));;
   }
-  if(this.age >= person.age)
+  if(this.age > person.age)
   {
   console.log(["My name is " +this.name + " and I'm older than " +person.name].join(""));;
   }
