@@ -6,7 +6,16 @@ class Song:
 		my_file = os.path.join('lastfm_subset', some_song[2], some_song[3],  some_song[4], os.path.splitext(some_song)[0] + '.json')
 		#file_directory = "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song + ".json"
 		#if os.path.exists(file_directory):
-		with open(my_file) as json_data:
+		#with open(my_file) as json_data:
+		#	data = json.load(json_data)
+		#	self.artist = data["artist"]
+		#	self.title = data["title"]
+		#	self.timestamp = data["timestamp"]
+		#	self.similars = data["similars"]
+		#	self.tags = data["tags"]
+		#	self.track_id = data["track_id"]
+		try:
+			json_data = open(my_file)
 			data = json.load(json_data)
 			self.artist = data["artist"]
 			self.title = data["title"]
@@ -14,6 +23,14 @@ class Song:
 			self.similars = data["similars"]
 			self.tags = data["tags"]
 			self.track_id = data["track_id"]
+		except IOError:
+			self.artist = ''
+			self.title = ''
+			self.timestamp = ''
+			self.similars = []
+			self.tags = []
+			self.track_id = ''
+			
 		#else:
 		#	return None
 		
