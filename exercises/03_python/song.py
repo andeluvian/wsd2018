@@ -1,16 +1,13 @@
 import json
 import os
-from pathlib import Path
 
 class Song:
 	def __init__(self, some_song):
 		#my_file = os.path.join('lastfm_subset', some_song[2], some_song[3],  some_song[4], os.path.splitext(some_song)[0] + '.json')
-		file_directory = Path( "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song + ".json")
-		if file_directory.is_file():
+		file_directory = "lastfm_subset/"+ some_song[2] + "/" + some_song[3] + "/" + some_song[4] + "/" + some_song + ".json"
+		if os.path.exists(file_directory):
 			with open(file_directory) as json_data:
 				data = json.load(json_data)
-			
-			
 				self.artist = data["artist"]
 				self.title = data["title"]
 				self.timestamp = data["timestamp"]
