@@ -19,7 +19,9 @@ from webshop import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-	path('about/',views.about,name='about'),
-	path('products/',views.available_products,name='products'),
-	path('products/01',views.productview,name='productview')
+	path('about/',views.about),
+	path('products/',views.available_products),
+	path('products/<int:product_id>/',views.productview)
+	#re_path(r'^products/(?P<int>[0-9]{4})/$',views.productview)
+	
 ]
