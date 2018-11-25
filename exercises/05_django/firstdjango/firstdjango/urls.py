@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from webshop import views
-
+app_name = 'products'
 urlpatterns = [
-    path('admin/', admin.site.urls),
-	path('about/',views.about),
-	path('products/',views.available_products),
-	path('products/<int:product_id>/',views.productview)
+    path('admin/', admin.site.urls,),
+	path('about/',views.about,),
+	path('products/',views.available_products,name='product-list'),
+    path('products/<int:product_id>/',views.productview,name='product-detail')
+    #path('products/',views.ProductList.as_view(),name='available_products')
+	#path('products/<int:product_id>/',views.ProductDetailView.as_view(),name='productview'),
 	#re_path(r'^products/(?P<int>[0-9]{4})/$',views.productview)
-	
+
 ]

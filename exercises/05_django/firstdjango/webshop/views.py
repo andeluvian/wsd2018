@@ -1,5 +1,6 @@
 from django.http import HttpResponse, Http404
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404, redirect
+from .models import Product
 
 def starting_instructions(request):
     return render(request, "webshop/instructions.html", {})
@@ -12,11 +13,18 @@ def productview(request, product_id):
     Write your view implementations for exercise 4 here.
     Remove the current return line below.
     """
-    return HttpResponse("product {}".format(product_id))
+    obj = get_object_or_404(Product, id=product_id)
+    context = {"object": obj}
+
+
+    return render(request, "webshop/product_view.html", context)
 
 def available_products(request):
     """
     Write your view implementations for exercise 4 here.
     Remove the current return line below.
     """
-    return HttpResponse("View not implemented!")
+    queryset = Product.objects.all()
+    context = {"object_list": queryset}
+
+    return render(request, "webshop/product_list.html", context)
