@@ -24,7 +24,7 @@ def available_products(request):
     Write your view implementations for exercise 4 here.
     Remove the current return line below.
     """
-    queryset = Product.objects.all()
+    queryset = Product.objects.filter(quantity__gte=0)
     context = {"object_list": queryset}
 
     return render(request, "webshop/product_list.html", context)
