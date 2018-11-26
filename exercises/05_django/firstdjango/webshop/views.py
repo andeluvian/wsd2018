@@ -15,7 +15,7 @@ def productview(request, product_id):
     Remove the current return line below.
     """
     obj = get_object_or_404(Product, id=product_id)
-    context = {"object": obj}
+    context = {"product": obj}
 
 
     return render(request, "webshop/product_view.html", context)
