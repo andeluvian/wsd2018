@@ -8,16 +8,16 @@
 <body>
 
   <form id="reverser">
-    <input id="toBeReversed" type="text" placeholder="Enter message" name="message">
+    <input id="toBeReversed" type="text" placeholder="Enter message" name="input">
     <input id="submitReverser" type="submit" value="Click to send">
   </form>
-  <button id="ClearInput" onclick="CLEARED()">Clear Input</button>
+  <button id="clearInput" onclick="CLEARED()">Clear Input</button>
 
 <!--  <iframe  id="iframe" style="display:block;height:60px"></iframe> -->
 
   <script>
     reverser.onsubmit = function() {
-      var str = this.message.value;
+      var str = this.input.value;
       str = str.split("");
       str = str.reverse();
       str = str.join("");
