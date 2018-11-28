@@ -7,15 +7,16 @@
 
 <body>
 
-  <form id="form">
-    <input type="text" placeholder="Enter message" name="message">
-    <input type="submit" value="Click to send">
+  <form id="reverser">
+    <input id="toBeReversed" type="text" placeholder="Enter message" name="message">
+    <input id="submitReverser" type="submit" value="Click to send">
   </form>
+  <button id="ClearInput" onclick="CLEARED()">Clear Input</button>
 
 <!--  <iframe  id="iframe" style="display:block;height:60px"></iframe> -->
 
   <script>
-    form.onsubmit = function() {
+    reverser.onsubmit = function() {
       var str = this.message.value;
       str = str.split("");
       str = str.reverse();
@@ -24,6 +25,17 @@
       window.parent.postMessage({"payload":str}, '*');
       return false;
     };
+    function CLEARED(){
+
+
+        var str2 = "INPUT CLEARED"
+
+        window.parent.postMessage({"payload":str2}, '*');
+        return false;
+      };
+
+
+
   </script>
 
 </body>
