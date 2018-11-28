@@ -14,10 +14,11 @@
   <button id="clearInput" onclick="CLEARED()">Clear Input</button>
 
 <!--  <iframe  id="iframe" style="display:block;height:60px"></iframe> -->
-
+<script src="lib/jquery-3.2.1.min.js"></script>
   <script>
     reverser.onsubmit = function() {
-      var str = this.input.value;
+    //  var str = this.input.value;
+      var str = $("input:text").val();
       str = str.split("");
       str = str.reverse();
       str = str.join("");
