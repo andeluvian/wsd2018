@@ -1,23 +1,36 @@
+$('#currency').submit(function(e) {
 
-$(function () {
+e.preventDefault();
+
+var date = new Date($('#date').val());
+day = date.getDate();
+month = date.getMonth() + 1;
+year = date.getFullYear();
+
   var $currencies = $('#currencies');
+
+
+
+
   $.ajax({
     type:'GET',
-    url:'http://data.fixer.io/api/latest?access_key=a9a648ff4113c91bddb8016c4b4cb605',
+    url:'http://acos.cs.hut.fi/wsd-currency/'+ year+'-'+month+'-'+day ,
+    crossDomain:true,
+    jsonpCallback:"example",
+    dataType:"jsonp",
+
     success: function(currencies){
-      $.each(currencies.rates, function(i, currency){
-
+      $.each(currencies, function(i, currency){
         $currencies.append('<tr><td>' + i + '</td><td>' + currency + '</td></tr>');
-
-      })
-      console.log('success', currencies.rates);
-
+      });
     }
-  })
+  });
+});
+$('#search').on('click', function(){
+  var date = new Date($('#date').val());
+  day = date.getDate();
+  month = date.getMonth() + 1;
+  year = date.getFullYear();
+//  alert([day, month, year].join('-'));
 
-})
-
-/*
-    ? access_key = a9a648ff4113c91bddb8016c4b4cb605
-    & base = JPY
-    & symbols = USD,AUD,CAD,PLN,MXN  */
+});

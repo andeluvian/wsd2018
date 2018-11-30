@@ -58,7 +58,7 @@
 <div class="content" id="jsonp">
   <h1>3. JSONP Currency Exchange Rates</h1>
 
-  <p>Fixer.io (<a href="http://fixer.io/">http://fixer.io/</a>) offers a JSONP
+  <p>This service (<a href="http://acos.cs.hut.fi/wsd-currency">http://acos.cs.hut.fi/wsd-currency</a>) offers a JSONP
     API for exchange rates for different currencies. Your task is to write a
     simple page, which shows exchange rates for a given date in the available currencies.
   </p>
@@ -91,10 +91,10 @@
     You can use <code>console.log("remarks", somedata);</code> to debug how your code works.
   </p>
   <p>
-    You can query the Fixer.io JSONP API for a specific date using
+    You can query this JSONP API for a specific date using
     following URL structure:<br/>
-      <a href="http://api.fixer.io/2010-10-20">
-        http://api.fixer.io/2010-10-20</a> where the last part is YYYY-MM-DD.
+      <a href="http://acos.cs.hut.fi/wsd-currency/2018-11-01?callback=example">
+        http://acos.cs.hut.fi/wsd-currency/2018-11-01?callback=example</a> where the last part is YYYY-MM-DD.
   </p>
   <p>
     To build the request URL get the entered tag value and URL-encode it.
@@ -109,10 +109,10 @@
   <h3>Dynamic DOM elements</h3>
   <p>
     At this point you should be able to receive a data object requested from the
-    Fixer.io feed and for example log the contents. Let the received feed object
-    be in a variable <code>data</code>. The exchange rates are in an object
-    <code>data.rates</code> that you should loop through. In the data.rates object
-    there are value pairs for each available currency code and the exchange rate
+    currency feed and for example log the contents. Let the received feed object
+    be in a variable <code>data</code>. The exchange rates are in the returned
+    object that you can now loop through. Available currency codes are the keys and the
+    exchange rates the values
     for that currency. E.g. <code>"AUD": 1.4151</code>.
   </p>
   <p>
