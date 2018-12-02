@@ -39,10 +39,13 @@ def country_json(request, continent_code, country_code):
         dictData = {"population":dictCountry.population,"capital":dictCountry.capital,"area":dictCountry.area}
     except:
         raise Http404("Country was not found")
+
+    jsonData = json.dumps(dictData)
+
     if (request.GET.get("callback") == None):
         return HttpResponse(jsonData, "application/json")
     else:
-        ''''jsonData = json.dumps(dictData)'''
+
         jsonData = request.GET.get("callback")+"(%s)" % jsonData
 
-        return HttpResponse(jsonData, "application/json")
+        return HttpResponse(jsonData, "application/javascript")
